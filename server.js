@@ -23,13 +23,10 @@ server = app.listen(port, ()=>{
     console.log(`localhost: ${port}`);
 });
 //GET route
-app.get('/all', (req , res)=>{
+app.get('/allData', (req , res)=>{
     res.send(projectData);
 });
 // POST route
-app.post('/', (req, res)=>{
-    res.send('post recieved');
-});
-app.post('/addData', (req, res)=>{
+app.post('/postData', (req, res)=>{
     projectData.push(req.body);
 });
