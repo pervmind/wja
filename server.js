@@ -28,5 +28,7 @@ app.get('/getProjectData', (req , res)=>{
 });
 // POST route
 app.post('/postData', (req, res)=>{
-    projectData.push(req.body);
+    projectData = req.body;
+    console.log('post recieved');
+    console.log(projectData);
 });
