@@ -25,6 +25,7 @@ server = app.listen(port, ()=>{
 //GET route
 app.get('/getProjectData', (req , res)=>{
     res.send(projectData);
+    console.log('data sent');
 });
 // POST route
 app.post('/postData', (req, res)=>{
