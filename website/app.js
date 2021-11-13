@@ -10,7 +10,7 @@ let newDate = d.getMonth()+1+'.'+ d.getDate()+'.'+ d.getFullYear();
 button.addEventListener('click', async()=>{
     let zip = document.getElementById('zip').value;
     const userResponse = document.getElementById('feelings').value;
-    const url = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${key}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${key}&units=metric`;
     const response = await fetch(url)
     const info = await response.json()
     const temp = info.main.temp;
@@ -55,6 +55,6 @@ const dataUpdate = async function getWeatherData(url = ''){
 
 async function updateUI(object){
     htmlDate.innerHTML = await object.newDate;
-    htmlTemp.innerHTML = await object.temp + ' kelvin';
+    htmlTemp.innerHTML = await object.temp + ' celcuis';
     htmlUserResponse.innerHTML = await object.userResponse;
 }
